@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using CollabWithEntraId_POC.Models;
+using System.Security.Claims;
 
 namespace CollabWithEntraId_POC.Controllers;
 
@@ -15,9 +16,11 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    public List<Claim> UserClaims => User.Claims.ToList();
+
     public IActionResult Index()
     {
-        return View();
+        return View(UserClaims);
     }
 
     public IActionResult Privacy()

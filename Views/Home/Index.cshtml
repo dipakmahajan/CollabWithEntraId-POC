@@ -3,6 +3,12 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Collab With Entra ID</h1>
+    <p style="text-align: left;">User Claims</p>
+    <ul style="text-align: left;">
+        @foreach (var claim in Model)
+        {
+            <li>@claim</li>
+        }
+    </ul>
 </div>
