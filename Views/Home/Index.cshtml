@@ -2,6 +2,16 @@
     ViewData["Title"] = "Home Page";
 }
 
+<h2>Welcome</h2>
+<p>Hello, @User.Identity?.Name!</p>
+<a href="/Home/SignOut">Sign out</a>
+<hr />
+<p>Sign in with:</p>
+<ul>
+    <li><a href="/Home/SignIn?provider=AzureAd">Entra ID (B2B)</a></li>
+    <li><a href="/Home/SignIn?provider=AzureAdB2C">Entra ID B2C</a></li>
+</ul>
+
 <div class="text-center">
     <h1 class="display-4">Collab With Entra ID</h1>
     <p style="text-align: left;">User Claims</p>
